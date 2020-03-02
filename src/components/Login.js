@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles/Styles';
-
-
 export default class App extends Component {
 
   clicou = () => {
-    console.log(this.props)
+    alert('OLA!');
   }
 
   render() {
+
+    // const { navigate } = this.props.navigation;
 
     return (
       //Logo
@@ -21,6 +21,7 @@ export default class App extends Component {
         />
           {/* Login  */}
         <TextInput
+          autoCorrect={false}
           style={styles.input}
           placeholder="Digite seu login:"
         />
@@ -30,21 +31,19 @@ export default class App extends Component {
           secureTextEntry={true}
           placeholder="Digite sua senha:"
         />
+
         {/* Botao */}
         <TouchableOpacity
         style={styles.button}
-        onPress={() => this.props.navigation.navigate('Home')}>
-          <Text style={styles.buttonText}>Entrar</Text>
+        onPress={() => this.props.navigate.navigation.bind('Home')}  // this.clicou.bind(this) () => {this.props.navigation.navigate('Home')}
+        >
+          <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
+        
 
-        {/* <TouchableOpacity
-        style={styles.button}
-        onPress={ this.clicou.bind(this)}>
-          <Text style={styles.buttonText}>Entrar</Text>
-        </TouchableOpacity> */}
-
-      </View>
+        </View> 
     );
-  } 
+      
+}
 }
 

@@ -1,13 +1,10 @@
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createAppContainer, createSwitchNavigator, withNavigation } from 'react-navigation';
 import Login from './Login';
 import Home from './Home';
 
 // Rotas
 
-const MainNav  = createStackNavigator (
+const MainNav  = createSwitchNavigator (
 {
     Login: {
         screen: Login,
@@ -23,5 +20,6 @@ const MainNav  = createStackNavigator (
     }
 }
 
-)
-export default createAppContainer(MainNav);
+);
+
+export default withNavigation(MainNav);
