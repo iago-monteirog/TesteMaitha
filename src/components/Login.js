@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Image, TouchableOpacity, Text, FlatList } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { View, Image, Text } from 'react-native';
+import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles/Styles';
+
 
 export default class App extends Component {
 
@@ -10,7 +11,6 @@ export default class App extends Component {
   }
 
   render() {
-
 
     return (
       //Logo
@@ -33,9 +33,15 @@ export default class App extends Component {
         {/* Botao */}
         <TouchableOpacity
         style={styles.button}
-        onPress={ () => this.props.navigation.navigate('Home')}>
+        onPress={() => this.props.navigation.navigate('Home')}>
           <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
+
+        {/* <TouchableOpacity
+        style={styles.button}
+        onPress={ this.clicou.bind(this)}>
+          <Text style={styles.buttonText}>Entrar</Text>
+        </TouchableOpacity> */}
 
       </View>
     );
