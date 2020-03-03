@@ -5,10 +5,11 @@ import styles from './styles/Styles';
 
 export default class Home extends Component {
 
+    //armazena o estado da aplicação
     constructor(props) {
         super(props);
         this.state = {
-          data: []
+          data: [] //armazena os dados vindo da API
         }
       }
     
@@ -21,13 +22,14 @@ export default class Home extends Component {
           },
           body: this.data
         })
-        .then((response) => response.json())
+        .then((response) => response.json()) // transforma em JSON
         .then((responseJson) => {
                 alert(responseJson.detail)
         }).catch((error) => {
             alert('error')})}
-
-    componentDidMount() {
+    
+    
+    componentDidMount() { 
         this.carregaPaises();
     }
 
@@ -35,8 +37,8 @@ export default class Home extends Component {
         return(
             <View style={styles.container}>
                 <FlatList
-                    data={this.state.data}
-                    renderItem={({item}) => (
+                    data={this.state.data} // tras a variavel de estado
+                    renderItem={({item}) => ( // renderiza cada item da lista
                         <View>
                             <Text>{item.pais}</Text>
                         </View>
